@@ -65,7 +65,7 @@ jobs:
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
     - name: Install clash
-      run: cd openwrt && git clone https://github.com/vernesong/OpenClash.git  && mv OpenClash/luci-app-openclash/ package
+      run: cd openwrt && git clone https://github.com/vernesong/OpenClash.git && git checkout master  && mv OpenClash/luci-app-openclash/ package
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
